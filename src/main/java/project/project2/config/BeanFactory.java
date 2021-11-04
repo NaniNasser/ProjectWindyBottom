@@ -1,5 +1,7 @@
 package project.project2.config;
 
+import org.springframework.context.MessageSource;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import project.project2.Service.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,8 +12,12 @@ import java.util.List;
 @Configuration
 public class BeanFactory {
 
-     List<Tool> tools;
-
+    @Bean
+    public MessageSource messageSource () {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasename("text/txt");
+        return messageSource;
+    }
 
      @Bean
     public Tool getBroom(){
@@ -27,7 +33,6 @@ public class BeanFactory {
     public Tool getSwiffer(){
          return new Swiffer();
      }
-
 
 
      @Bean
@@ -87,6 +92,5 @@ public class BeanFactory {
     public DomesticService domesticService(){
          return  new DomesticServiceImpl(List.of(broomService(),swifferService(),vacuumService()), List.of(lawnMowerService(),rakeService(),spadeService()));
     }
-
 
 }
