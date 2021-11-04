@@ -1,5 +1,7 @@
 package project.project2;
 
+import Service.CleaningRobot;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,4 +12,6 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
+    private BeanFactory context;
+    CleaningRobot cl1 = context.getBean(CleaningRobot.class);
 }
