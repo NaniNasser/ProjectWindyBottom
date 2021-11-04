@@ -1,6 +1,6 @@
-package Service;
+package project.project2.Service;
 
-import org.springframework.context.annotation.Primary;
+import project.project2.tools.Tool;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -23,8 +23,4 @@ public class CleaningRobot implements CleaningService {
             tools.forEach(Tool::doCleaningJob);
     }
 
-    @Override
-    public void clean(CleaningServiceImpl cleaningServiceImpl) {
-
-    }
 }
