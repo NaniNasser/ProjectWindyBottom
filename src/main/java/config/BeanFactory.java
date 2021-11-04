@@ -13,31 +13,27 @@ public class BeanFactory {
 
      List<Tool> tools;
 
-    @Bean
-    public Broom createBroom() {
-        return new Broom();
-    }
 
-    @Bean
-    public Swiffer swiffer() {
-        return new Swiffer();
-    }
+     @Bean
+    public Broom getBroom(){
+         return new Broom();
+     }
 
-    @Bean
-    public VacuumCleaner createVacuumCleaner() {
-        return new VacuumCleaner();
-    }
+     @Bean
+    public VacuumCleaner getVacuumCleaner(){
+         return new VacuumCleaner();
+     }
 
-    @Primary
-    @Bean
-    public CleaningRobot createCleaningRobot(){
-        return new CleaningRobot(tools);
-    }
+     @Bean
+    public Swiffer getSwiffer(){
+         return new Swiffer();
+     }
 
-    @PostConstruct
-    @Bean
-    public CleaningServiceImpl cleaningServiceImpl(){
-        return new CleaningServiceImpl();
-    }
+     @Bean
+     public CleaningServiceImpl broomService() {
+         return new CleaningServiceImpl();
+     }
+
+
 
 }

@@ -1,5 +1,5 @@
 package Service;
 
-public class CleaningServiceImpl {
+public class CleaningServiceImpl implements GardeningService {
   public Tool cleaningTool;
 }
